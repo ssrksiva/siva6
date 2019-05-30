@@ -5,17 +5,25 @@ Sample Microservice Project
 2)Enter project details
 
   Type of Project
+  
   Language
+  
   Spring Boot version
+  
   group Id
+  
   artifact Id
+  
   Add Dependencies(web)
 
 3)Create API Calls
 
-  Add RestController,
+  Add RestController
+  
   RequestMapping
+  
   Type Of call(Get or Post)
+  
 
 4)Add to pom.xml
 
