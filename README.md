@@ -48,8 +48,11 @@ Sample Microservice Project
 5)create DockerFile 
 
    FROM openjdk:8-jdk-alpine
+   
    VOLUME /tmp
+   
    ADD target/demo3455-0.0.1-SNAPSHOT.jar demo3455-0.0.1-SNAPSHOT.jar
+   
    ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","demo3455-0.0.1-SNAPSHOT.jar"]
 	
 6)cmd for Docker Build
