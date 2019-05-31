@@ -77,7 +77,7 @@
    
    docker push sssrkbsc/demo3455         (or $HOST/demo3455)
   
-9)create kubernettes deployment and servuice definition file demo3455.yml
+9)create kubernettes deployment and service definition file demo3455.yml
 
 ```
 kind: Service
