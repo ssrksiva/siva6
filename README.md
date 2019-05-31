@@ -77,39 +77,69 @@
    
    docker push sssrkbsc/demo3455         (or $HOST/demo3455)
   
-9)create kubernettes deployment and servuice definition file demo3455.yml with content:
+9)create kubernettes deployment and servuice definition file demo3455.yml
 
 
 kind: Service
-apiVersion: v1
-metadata:
-    name: demo3455
-spec:
-    type: NodePort
-    selector:
-        app: demo3455
-    ports:
-        -
-            protocol: TCP
-            port: 8080
 
+apiVersion: v1
+
+metadata:
+
+  name: demo3455
+  
+spec:
+  
+  type: NodePort
+  
+  selector:
+  
+    app: demo3455
+  ports:
+  
+  - protocol: TCP
+  
+    port: 8080
+  
 ---
 
 apiVersion: apps/v1
-kind: Deployment
-metadata:
-    name: demo3455
-spec:
-    selector:
-        matchLabels:
-            app: demo3455
-    replicas: 1
-    template:
-        metadata:
-            labels: {app: demo3455}
-        spec:
-            containers: [{name: demo3455, image: 'sssrkbsc/demo3455:latest', ports: [{containerPort: 8080}]}]
 
+kind: Deployment
+
+metadata:
+
+  name: demo3455
+  
+spec:
+
+  selector:
+  
+      matchLabels:
+	  
+        app: demo3455
+		
+  replicas: 1
+  
+  template:
+  
+    metadata:
+	
+      labels:
+	  
+        app: demo3455
+		
+    spec:
+	
+      containers:
+	  
+        - name: demo3455
+		
+          image: sssrkbsc/demo3455:latest
+		  
+          ports:
+		  
+            - containerPort: 8080  
   
   
 10)Deploy in Kubernettes
