@@ -83,36 +83,33 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: demo3455
+    name: demo3455
 spec:
-  type: NodePort
-  selector:
-    app: demo3455
-  ports:
-  - protocol: TCP
-    port: 8080
-  
+    type: NodePort
+    selector:
+        app: demo3455
+    ports:
+        -
+            protocol: TCP
+            port: 8080
+
 ---
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo3455
+    name: demo3455
 spec:
-  selector:
-      matchLabels:
-        app: demo3455
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: demo3455
-    spec:
-      containers:
-        - name: demo3455
-          image: sssrkbsc/demo3455:latest
-          ports:
-            - containerPort: 8080  
+    selector:
+        matchLabels:
+            app: demo3455
+    replicas: 1
+    template:
+        metadata:
+            labels: {app: demo3455}
+        spec:
+            containers: [{name: demo3455, image: 'sssrkbsc/demo3455:latest', ports: [{containerPort: 8080}]}]
+
   
   
 10)Deploy in Kubernettes
